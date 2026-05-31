@@ -1,0 +1,49 @@
+一、基础配置（一次设置，永久生效）
+# 配置用户名（替换成你自己的）
+git config --global user.name "你的GitHub用户名"
+
+# 配置邮箱（和GitHub绑定的邮箱一致）
+git config --global user.email "你的邮箱地址"
+
+# 查看当前配置
+git config --global --list
+
+# 初始化本地仓库（进入项目文件夹后执行）
+git init
+
+二、项目初始化与关联远程
+# 关联GitHub远程仓库（替换成你的仓库地址）
+git remote add origin https://github.com/Ermao0828/SpaceZ0531
+
+# 查看远程仓库关联情况
+git remote -v
+
+# 若关联错误，删除旧的origin再重新关联
+git remote remove origin
+
+# 1. 把修改加入暂存区（提交前必做）
+git add .
+
+三、日常提交 / 推送 / 拉取（最常用）
+# 2. 提交修改并写说明
+git commit -m "这里写清楚你改了什么，比如：修复登录按钮bug"
+
+# 3. 推送到远程main分支
+git push origin main
+
+# 4. 拉取远程最新代码（更新本地）
+git pull origin main
+
+四、查看状态与日志
+# 查看当前文件状态（哪些改了、哪些没提交）
+git status
+
+# 查看提交历史记录
+git log --oneline
+
+五、撤销 / 回滚操作（踩坑急救用）
+# 撤销暂存区的修改（git add之后想撤回）
+git reset HEAD .
+
+# 撤销本地未提交的修改（恢复到上一次提交的状态，谨慎使用！）
+git checkout .
